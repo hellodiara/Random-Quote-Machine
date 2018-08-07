@@ -21,7 +21,15 @@ function displayQuote(quote) {
 	quoteText.textContent = quote.quote;
 	authorText.textContent = quote.author;
 
+	const tweetButton = document.querySelector('.tweet');
+	tweetButton.setAttribute('href', "https://twitter.com/intent/tweet?text=" + quote.quote + " By " + quote.author);
+
+
 }
 
 const newQuoteButton= document.querySelector('.new-quote');
 newQuoteButton.addEventListener('click', getQuote);
+
+getQuote();
+
+//  + quote.quote + " By " + quote.author

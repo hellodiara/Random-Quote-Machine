@@ -1,7 +1,3 @@
-const newQuoteButton= document.querySelector('.new-quote');
-
-newQuoteButton.addEventListener('click', getQuote);
-
 const endPoint = 'https://talaikis.com/api/quotes/random/';
 
 // Retrieves quote from API
@@ -20,6 +16,12 @@ function getQuote() {
 
 // Displays the quote on the page
 function displayQuote(quote) {
+	const authorText = document.querySelector('.author-text');
 	const quoteText = document.querySelector('.quote-text');
-	quoteText.textContent =quote;
+	quoteText.textContent = quote.quote;
+	authorText.textContent = quote.author;
+
 }
+
+const newQuoteButton= document.querySelector('.new-quote');
+newQuoteButton.addEventListener('click', getQuote);
